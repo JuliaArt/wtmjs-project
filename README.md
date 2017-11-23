@@ -1,2 +1,3 @@
 # wtmjs-project
-JavaScript course
+
+A small tool that helps to organise your day in an effective way
