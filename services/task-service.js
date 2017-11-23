@@ -18,6 +18,9 @@ async function find(taskId){
     return TaskModel.findOne({taskId}).populate('owner')
 }
 
+// async function edit(taskId){
+//     return TaskModel.edit({taskId}).
+// }
 module.exports = {
     findAll,
     find,

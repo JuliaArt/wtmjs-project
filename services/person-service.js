@@ -6,6 +6,10 @@ async function findAll() {
     return PersonModel.find()
 }
 
+async function findById(id){
+    return PersonModel.findById(id)
+}
+
 async function add(person){
     return PersonModel.create(person)
 }
