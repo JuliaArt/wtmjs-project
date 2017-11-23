@@ -1,0 +1,2 @@
+# wtmjs-project
+JavaScript course
