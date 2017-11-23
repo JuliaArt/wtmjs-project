@@ -6,6 +6,10 @@
   "scripts": {
     "test": "mocha"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JuliaArt/wtmjs-project"
+  },
   "author": "Yuliya Artsiomishyna",
   "license": "MIT",
   "dependencies": {
