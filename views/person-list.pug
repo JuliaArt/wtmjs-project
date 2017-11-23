@@ -1,0 +1,19 @@
+extends layout
+
+block content
+    h2 Hello!
+    if people.length
+        p Here are the people:
+        table
+            thead
+                td ID
+                td Name
+            each person in people
+                tr
+                   td #{person.id}
+                   td #{person.name}
+        pre= JSON.stringify(people, null, 2)
+    else 
+        p There's no one yet
+    script.
+        console.log(!{JSON.stringify(people)})

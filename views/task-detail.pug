@@ -1,0 +1,11 @@
+extends layout
+
+block content
+    if task
+        h2 Your task ##{task.taskId}
+        p Here are a full task description:
+        pre !{JSON.stringify(task, null, 2)}
+    else
+        h2 There's no such task!
+    script.
+        console.log(!{JSON.stringify(task)})

@@ -1,0 +1,21 @@
+{
+  "name": "wtmjs-project",
+  "version": "1.0.0",
+  "description": "The tool that helps to organise your day in a effective way",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "author": "Yuliya Artsiomishyna",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.17.1",
+    "cookie-parser": "^1.4.3",
+    "express": "^4.16.2",
+    "mongodb": "^2.2.33",
+    "mongoose": "^4.13.3",
+    "mongoose-sequence": "^4.0.1",
+    "nodemon": "^1.12.1",
+    "pug": "^2.0.0-rc.4"
+  }
+}

@@ -1,0 +1,21 @@
+extends layout
+
+block content
+    h2 Hello!
+    if tasks.length
+        p Here are the tasks list:
+        table
+            thead
+                td ID
+                td Name
+                td Owner
+            each task in tasks
+                tr
+                   td #{task.id}
+                   td #{task.name}
+                   td #{task.owner}
+        pre= JSON.stringify(tasks, null, 2)
+    else 
+        p There's no one yet
+    script.
+        console.log(!{JSON.stringify(tasks)})
