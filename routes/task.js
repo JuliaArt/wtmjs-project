@@ -20,32 +20,14 @@ router.get('/:taskId', async(req, res, next) =>{
 
 router.post('/add', async(req, res, next) => {
     const task = await TaskService.add(req.body)
-    const owner = await PersonService.findById(req.body.owner)
+    const owner = await PersonService.find(req.body.id)
     owner.task.push(task);
-    console.log(owner)
     owner.save();
     res.send(task)
 })
 
-/*
-router.post('/assign/:id', async(req, res, next) => {
-    const owner = await PersonService.find(req.params.id);
-    let task = await TaskService.add({...req.body, owner});
-    console.log(task)
-    
-     owner.tasks.addToSet(task)
-     // task.owner.addToSet(person)
-     // person.task.addToSet(task)
-     await person.save()
-     const updatedOwner = await owner.save();
-     //const updatedTask = await task.save()
-     res.send(task)
-})
-*/
-
 router.delete('/:taskId', async(req, res, next) => {
     await TaskService.del(req.params.taskId)
-
     res.send('ok!')
 })
 
