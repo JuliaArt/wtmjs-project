@@ -27,3 +27,40 @@ test('Create new task', async t => {
     t.is(res.status, 200)
     t.is(res.body.name, newTask.name)
 })
+
+test('Fetch a task', async t => {
+    t.plan(2)
+
+    const task = (await request(app)
+        .post('/task/add')
+        .send({name: 'Task#100', id:'2'}))
+        .body
+
+    const fetch = await request(app)
+        .get(`/task/${task.taskId}/json`)
+
+    console.log("fetch.body "+ fetch.body)
+    console.log("task "+ task)
+    t.is(fetch.status, 200)
+    t.deepEqual(fetch.body, task)
+})
+
+test('Delete a task', async t => {
+    t.plan(3)
+
+    const task = (await request(app)
+        .post('/task/add')
+        .send({name: 'Task#100', id:'2'}))
+        .body
+
+    const del = await request(app)
+        .delete(`/task/${task.taskId}`)
+
+    t.is(del.status, 200)
+    t.is(del.text, 'ok!')
+
+    const fetch = await request(app)
+    .get(`/task/${task.taskId}/json`)
+
+    t.is(fetch.status, 404)
+})

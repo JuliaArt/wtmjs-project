@@ -18,6 +18,12 @@ router.get('/:taskId', async(req, res, next) =>{
     res.render('task-detail',{task})
 })
 
+router.get('/:taskId/json', async (req, res, next) => {
+    const task = await TaskService.find(req.params.taskId)
+    if (!task) res.status(404)
+    res.send(task)
+})
+
 router.post('/add', async(req, res, next) => {
     const task = await TaskService.add(req.body)
     const owner = await PersonService.find(req.body.id)
