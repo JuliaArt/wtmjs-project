@@ -32,7 +32,6 @@ router.post('/', async(req, res, next) => {
 router.delete('/:id', async(req,res,next) => {
     await PersonService.del(req.params.id)
    // await PersonService.delete(req.params.id)
-
     res.send('ok!')
 })
 
