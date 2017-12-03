@@ -11,7 +11,7 @@ services:
     ports:
       - 3000:3000
     volumes:
-      - .:/app
+      - ./src:/app/src
     depends_on:
       - mongodb
   
@@ -25,6 +25,6 @@ services:
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
     ports:
-      - 8000:80
-      - 443:4430
+      - 80:80
+      - 443:443
     restart: on-failure

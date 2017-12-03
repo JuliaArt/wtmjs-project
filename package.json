@@ -4,7 +4,8 @@
   "description": "The tool that helps to organise your day in a effective way",
   "main": "index.js",
   "scripts": {
-    "test": "nyc ava"
+    "test": "nyc ava --verbose",
+    "test-watch": "ava --verbose --watch"
   },
   "repository": {
     "type": "git",

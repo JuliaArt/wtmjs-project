@@ -1,6 +1,6 @@
 import test from 'ava'
 import request from 'supertest'
-import app from '../app'
+import app from '../src/app'
 
 test('Get list of tasks', async t => {
     const newTask = {name: 'Task#100', id:'2' }
